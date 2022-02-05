@@ -2,7 +2,7 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale-1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> 
         <title>Crypto Source</title>
     </head>
@@ -67,6 +67,14 @@
             <h2 class = "subtitle is-size-3 has-text-centered has-text-info">NEWS ARTICLES</h2>
 
         </section>
+        
+        <script> 
+        var dropdown = document.querySelector('.dropdown');
+dropdown.addEventListener('click', function(event) {
+  event.stopPropagation();
+  dropdown.classList.toggle('is-active');
+});
+        </script>
         
         <script src="script.js"></script>
     </body>
