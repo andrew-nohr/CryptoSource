@@ -1,45 +1,44 @@
 body {
-    background-image: url(../images/cypto2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+  background-image: url(../images/cypto2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 header {
-    background-color: black;
-    opacity: 70%;
+  background-color: black;
+  opacity: 70%;
 }
-
 
 .backgroundContainer,
 .backgroundContainer2 {
-    margin: 20px;
-    padding: 5px;
-    background-color: black;
-    opacity: 70%;
-    border: 2px rgb(98, 0, 255) solid;
+  margin: 20px;
+  padding: 5px;
+  background-color: black;
+  opacity: 70%;
+  border: 2px rgb(98, 0, 255) solid;
 }
 
 .hero-body {
-    align-items: self-start !important;
-    display: flex;
+  align-items: self-start !important;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .has-text-warning,
 .cryptoName,
-.time-date   {
-    text-align: center;
+.time-date {
+  text-align: center;
 }
 
 section.container,
 section.backgroundContainer,
 section.backgroundContainer2 {
-align-self: baseline;
-justify-content: center;
-flex-wrap: wrap;
-flex: content;
-flex-direction: column;
+  align-self: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: content;
+  flex-direction: row;
 }
