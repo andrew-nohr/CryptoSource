@@ -1,29 +1,47 @@
-// info from users 
-document.getElementById("submit-button").addEventListener("click", symbol)
+var symbol = document.querySelector('a').textContent;
+console.log(symbol)
 
 
-// Technical Analysis 
-// Key: XFRBFLAUSZVF7LBAF7HOFQPZXZBQ5V66MJUOXKB5DVTC3TRV
+var cryptoCompareApiKey = "c3d24075ea2af90c9c9419267e59744738dc365a925003c0232e1ebef14a98b1";
 
+var getCryptoCompareDataBySymbol = function (symbol) {
 
+    var cryptoCompareURL = "https://min-api.cryptocompare.com/data/v2/news/?lang=EN&categories=" + symbol + "&api_key=" + cryptoCompareApiKey
+    console.log("Fetching: " + cryptoCompareURL);
 
+    fetch(cryptoCompareURL)
 
+        // Check if response is OK and if it is, load response as json
+        .then(response => {
+            if (response.ok) {
+                return response.json()
+            } else {
+                return Promise.reject("API did not return an OK response.");
+            }
+        })
 
+        // check if we recieved data back and if we did, display it to user
+        .then(cryptoCompareData => {
+            if (cryptoCompareData != "" && cryptoCompareData != null) {
+                return displayCryptoCompareData(cryptoCompareData);
+            }
+        })
 
-
-//COINCAP 
-
-//var coinCapApiKey = "077197b0-ec28-42d9-a263-4d69a7e393ea";
+        // if we encounter errors above, this catch block will run
+        .catch(function (error) {
+            console.log(error);
+        });
+}
 
 var getCoinCapDataBySymbol = function (symbol) {
-    
+
     var coinCapAssetsURL = "https://api.coincap.io/v2/assets/" + symbol
     //CoinCap documentation reccomends to use these options: https://docs.coincap.io/#d4bac290-230a-48c6-a8eb-6804b2d137f3
-    var requestOptions = { 
+    var requestOptions = {
         method: 'GET',
         redirect: 'follow'
     };
-    
+
     console.log("Fetching: " + coinCapAssetsURL);
     fetch(coinCapAssetsURL, requestOptions)
 
@@ -47,7 +65,10 @@ var getCoinCapDataBySymbol = function (symbol) {
         .catch(function (error) {
             console.log(error);
         });
+}
 
+var displayCryptoCompareData = function (cryptoCompareData) {
+    console.log(cryptoCompareData)
 }
 
 var displayCoinCapData = function (coinCapData) {
@@ -63,3 +84,4 @@ var displayCoinCapData = function (coinCapData) {
 }
 
 getCoinCapDataBySymbol("bitcoin");
+getCryptoCompareDataBySymbol("BTC")
