@@ -1,7 +1,3 @@
-var symbol = document.querySelector('a').textContent;
-console.log(symbol)
-
-
 var cryptoCompareApiKey = "c3d24075ea2af90c9c9419267e59744738dc365a925003c0232e1ebef14a98b1";
 
 var getCryptoCompareDataBySymbol = function (symbol) {
