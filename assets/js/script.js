@@ -2,17 +2,19 @@ symbols = ['BTC','ETH','LTC','XRP','ADA','CRO']
 
 for (var i = 0; i < symbols.length ; i++) {
     function coinLayerFetch(){
-        fetch('http://api.coinlayer.com/api/live?access_key=40b565543bfa215722cf41a447afab32&Symbols='+symbols[i])
+        fetch('http://api.coinlayer.com/api/live?access_key=badc6c35cf23ca80b1c1af4c8eda2e1d&Symbols='+symbols[i])
             .then(response => response.json()) 
             .then(data => {
-                console.log(data.rate)})
-            // var DisplayData = function (symbol,rate){}
+                console.log(data)})
+
+
         
-
-        }
-
+// function displayData (symbol,price){
+//     console.log(symbol,price)
     // var cryptoValue = document.getElementById('cryptoValue')
-    // cryptoValue.appendChild(rate)
+    // cryptoValue.appendChild(rate)    
+}
+
 coinLayerFetch()
 
 // News: cryptoCompare
@@ -31,7 +33,7 @@ var CryptoCompareData = function () {
     }
 CryptoCompareData()
 
-}
+
 
 // // Coinlayer, gives latest crypto rates for all available or a specific set of cryptocurrencies. 
 // function coinLayerFetch(){
@@ -61,4 +63,4 @@ CryptoCompareData()
 
 
 
-
+}
