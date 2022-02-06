@@ -1,5 +1,5 @@
 var cryptoCompareApiKey = "c3d24075ea2af90c9c9419267e59744738dc365a925003c0232e1ebef14a98b1";
-var coinCapApiKey = "077197b0-ec28-42d9-a263-4d69a7e393ea";
+var coinLayerApiKey = "badc6c35cf23ca80b1c1af4c8eda2e1d";
 
 var getCryptoCompareDataBySymbol = function (symbol) {
 
@@ -32,7 +32,7 @@ var getCryptoCompareDataBySymbol = function (symbol) {
 
 var getCoinLayerDataBySymbol = function (symbol) {
 
-    var coinLayerURL = "http://api.coinlayer.com/api/live?access_key=badc6c35cf23ca80b1c1af4c8eda2e1d&Symbols=" + symbol
+    var coinLayerURL = "http://api.coinlayer.com/api/live?access_key=" + coinLayerApiKey + "&Symbols=" + symbol
     
     console.log("Fetching: " + coinLayerURL);
     fetch(coinLayerURL)
