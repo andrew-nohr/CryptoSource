@@ -40,5 +40,5 @@ section.backgroundContainer2 {
   justify-content: center;
   flex-wrap: wrap;
   flex: content;
-  flex-direction: column;
+  flex-direction: row;
 }
