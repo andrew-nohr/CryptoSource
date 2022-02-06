@@ -12,9 +12,8 @@ header {
 }
 
 
-.backgroundContainer {
-    -ms-flex-align: center;
-    flex: content;
+.backgroundContainer,
+.backgroundContainer2 {
     margin: 20px;
     padding: 5px;
     background-color: black;
@@ -24,4 +23,23 @@ header {
 
 .hero-body {
     align-items: self-start !important;
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.has-text-warning,
+.cryptoName,
+.time-date   {
+    text-align: center;
+}
+
+section.container,
+section.backgroundContainer,
+section.backgroundContainer2 {
+align-self: baseline;
+justify-content: center;
+flex-wrap: wrap;
+flex: content;
+flex-direction: column;
 }
