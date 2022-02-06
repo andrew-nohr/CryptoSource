@@ -13,7 +13,9 @@ header {
 
 
 .backgroundContainer {
-    margin: 5px;
+    -ms-flex-align: center;
+    flex: content;
+    margin: 20px;
     padding: 5px;
     background-color: black;
     opacity: 70%;
