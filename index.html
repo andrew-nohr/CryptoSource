@@ -4,25 +4,29 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> 
-        <link rel="stylesheet" href="./assets/css/style.css"> 
+        <link rel="stylesheet" href="./assets/css/style.css">
         <title>Crypto Source</title>
     </head>
 
-    <body class="is-fullheight">
-        <header>
-            <h1 class="title is-uppercase is-size-1 has-text-centered has-text-primary">Crypto Source</h1>
-            <h2 class="subtitle is-size-3 has-text-centered has-text-info">Your source for current crypto currency rates and patterns.</h2>
-        </header>
+    <body>
+      <header>
+        <h1 class="title is-uppercase is-size-1 has-text-centered has-text-primary">Crypto Source</h1>
+        <h2 class="subtitle is-size-3 has-text-centered has-text-info">Your source for current crypto currency rates and patterns.</h2>
+      </header>
+      <div class="hero is-fullheight">
+        <div class="hero-body">
 
         <section class="container">
         <!-- DROPDOWN MENU STARTS-->
-            <div class="dropdown is-active">
-                <div class="dropdown-trigger">
-                          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
-                            <span>Choose a coin or token</span>
-                            <span class="icon is-small">
-                              <i class="fas fa-angle-down" aria-hidden="true"></i>
-                            </span>
+        <div class="dropdown">
+        <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+            
+                <span>Choose a coin or token</span>
+                <span class="icon is-small">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                
+                </span>
                           </button>
                         </div>
                         <div class="dropdown-menu" id="dropdown-menu2" role="menu">
@@ -57,17 +61,19 @@
         
                     <!-- DROPDOWN MENU ENDS-->
         </section>
-        <section class = "has-text-centered">
-            <p id = "time-date">As of DATE & TIME</p>
+        <section class = "backgroundContainer">
+            <p class = "time-date">As of DATE & TIME</p>
             <p class = "cryptoName"> *Selected Coin* has a trading value of about *Coin Value*</p>
             <p class = "cryptoValue"> </p>
             <p class = "has-text-warning">*Please note estimated values can expire in a matter of seconds.</p>
         </section>
 
-        <section>
+        <section class="backgroundContainer2">
             <h2 class = "subtitle is-size-3 has-text-centered has-text-info">NEWS ARTICLES</h2>
 
         </section>
+      </div>
+    </div>
         
         <script>
         var dropdown = document.querySelector('.dropdown');
@@ -77,8 +83,6 @@
             });
         </script>
         
-<!--        <script src="script.js"></script> 
-    -->
+        <script src="./assets/js/script.js"></script>
     </body>
 </html>
-  
