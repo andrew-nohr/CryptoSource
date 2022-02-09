@@ -71,7 +71,7 @@ var displayCryptoCompareData = function (cryptoCompareData) {
     // Create card elements for the first 3 news articles
     for (var i = 0; i < 3; i++) {
 
-        //Create the card elements
+        // -------- Create the card elements --------
         var column = document.createElement("div");
         column.classList.add("column");
         column.classList.add("is-4");
@@ -82,7 +82,7 @@ var displayCryptoCompareData = function (cryptoCompareData) {
         card.classList.add("is-shady");
         column.append(card);
 
-        //Elements for card image
+        // -------- Elements for card image --------
         var cardImageDiv = document.createElement("div");
         cardImageDiv.classList.add("card-image");
         card.append(cardImageDiv);
@@ -92,11 +92,12 @@ var displayCryptoCompareData = function (cryptoCompareData) {
         cardImageFigure.classList.add("is-4by3");
         cardImageDiv.append(cardImageFigure);
 
+        //Set the image from the API call data
         var cardImage = document.createElement("img");
-        cardImage.setAttribute("src", "https://www.quoteinspector.com/media/bitcoin/crypto-ticker-candle-background-md.jpg");
+        cardImage.setAttribute("src", cryptoCompareData.Data[i].imageurl); 
         cardImageFigure.append(cardImage);
 
-        //Elements for card content
+        // -------- Elements for card content --------
         var cardContent = document.createElement("div");
         cardContent.classList.add("card-content");
         card.append(cardContent);
@@ -105,16 +106,19 @@ var displayCryptoCompareData = function (cryptoCompareData) {
         content.classList.add("content");
         cardContent.append(content);
 
+        //Set the card title from the API call data
         var cardTitle = document.createElement("h4");
-        cardTitle.textContent = "This is a card title";
+        cardTitle.textContent = cryptoCompareData.Data[i].title;
         content.append(cardTitle);
 
+        //Set the card description from the API call data
         var cardDescription = document.createElement("p");
-        cardDescription.textContent = "This is the card text";
+        cardDescription.textContent = cryptoCompareData.Data[i].body;
         content.append(cardDescription);
 
+        //Set the read button link target from the API call
         var readButton = document.createElement("a");
-        readButton.setAttribute("href", "http://www.google.com");
+        readButton.setAttribute("href", cryptoCompareData.Data[i].url);
         readButton.setAttribute("target", "_blank");
         readButton.classList.add("button");
         readButton.classList.add("is-link");
@@ -124,7 +128,7 @@ var displayCryptoCompareData = function (cryptoCompareData) {
     }
 
 
-    //console.log(cryptoCompareData)
+    console.log(cryptoCompareData)
 }
 
 var displayCoinLayerData = function (coinLayerData) {
@@ -133,4 +137,4 @@ var displayCoinLayerData = function (coinLayerData) {
 }
 
 //getCoinLayerDataBySymbol("BTC");
-//getCryptoCompareDataBySymbol("BTC")
+getCryptoCompareDataBySymbol("BTC")
