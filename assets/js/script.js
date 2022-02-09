@@ -50,28 +50,16 @@ var getCoinLayerDataBySymbol = function (symbol) {
         .then(coinLayerData => {
             if (coinLayerData != "" && coinLayerData != null) {
                 
-            // var timeStamp = coinLayerData.timestamp;
-            // var currentDate = new Date (timeStamp);
-            // var currentTime = currentDate.getTime();
-            // var month = currentDate.getMonth();
-            // var year = currentDate.getFullYear();
-            // var hour = currentDate.getHours();
-            // var minute = currentDate.getMinutes();
-            
-
             return displayCoinLayerData(coinLayerData);
 
             }
         })
 
 
-
         // if we encounter errors above, this catch block will run
         .catch(function (error) {
             console.log(error);
         });
-
-
 
 
 }
