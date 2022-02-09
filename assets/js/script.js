@@ -2,11 +2,11 @@ var cryptoCompareApiKey = "c3d24075ea2af90c9c9419267e59744738dc365a925003c0232e1
 var coinLayerApiKey = "badc6c35cf23ca80b1c1af4c8eda2e1d";
 
 var newsColumns = document.getElementById("news-columns");
+var dropdown = document.querySelector('.dropdown');
 
 var getCryptoCompareDataBySymbol = function (symbol) {
 
     var cryptoCompareURL = "https://min-api.cryptocompare.com/data/v2/news/?lang=EN&categories=" + symbol + "&api_key=" + cryptoCompareApiKey
-    console.log("Fetching: " + cryptoCompareURL);
 
     fetch(cryptoCompareURL)
 
@@ -124,17 +124,35 @@ var displayCryptoCompareData = function (cryptoCompareData) {
         readButton.classList.add("is-link");
         readButton.textContent = "Read";
         content.append(readButton);
-
     }
-
-
-    console.log(cryptoCompareData)
 }
 
 var displayCoinLayerData = function (coinLayerData) {
     console.log(coinLayerData)
-
 }
 
-//getCoinLayerDataBySymbol("BTC");
-getCryptoCompareDataBySymbol("BTC")
+var toggleDropdown = function (event){
+    event.stopPropagation();
+    dropdown.classList.toggle('is-active');
+
+    if (event.target.className == "dropdown-item") {
+        var selectedCoin = event.target.textContent;
+
+        if (selectedCoin.includes("Bitcoin")) {
+            getCryptoCompareDataBySymbol("BTC");
+        } else if (selectedCoin.includes("Etherium")) {
+            getCryptoCompareDataBySymbol("ETH")
+        } else if (selectedCoin.includes("LiteCoin")) {
+            getCryptoCompareDataBySymbol("LTC")
+        } else if (selectedCoin.includes("Ripple")) {
+            getCryptoCompareDataBySymbol("XRP")
+        } else if (selectedCoin.includes("Cardano")) {
+            getCryptoCompareDataBySymbol("ADA")
+        } else if (selectedCoin.includes("Crypto.com Coin")) {
+            getCryptoCompareDataBySymbol("CRO")
+        }
+    }
+}
+
+
+dropdown.addEventListener('click', toggleDropdown);
