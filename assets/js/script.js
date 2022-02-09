@@ -52,17 +52,25 @@ var getCoinLayerDataBySymbol = function (symbol) {
         // check if we recieved data back and if we did, display it to user
         .then(coinLayerData => {
             if (coinLayerData != "" && coinLayerData != null) {
+<<<<<<< HEAD
             var coinValue = coinLayerData.rates
             return displayCoinLayerData(coinLayerData);
+=======
+                console.log(coinLayerData)
+                displayCoinLayerData(coinLayerData);
+                var coinValue = coinLayerData.rates
+                console.log(coinValue)
+>>>>>>> parent of 12fd651 (debugging, reverted to previous version)
             }
         })
-
 
 
         // if we encounter errors above, this catch block will run
         .catch(function (error) {
             console.log(error);
         });
+
+
 }
 
 var displayCryptoCompareData = function (cryptoCompareData) {
@@ -73,12 +81,19 @@ var displayCryptoCompareData = function (cryptoCompareData) {
 var displayCoinLayerData = function (coinLayerData) {
     console.log(coinLayerData)
 
+<<<<<<< HEAD
     var dateAndTime = moment().format('MMMM Do YYYY, h:mm:ss a');   
 
+=======
+>>>>>>> parent of 12fd651 (debugging, reverted to previous version)
     //display date and time 
+    var dateAndTime = moment().format('MMMM Do YYYY, h:mm:ss a');   
     $('.time-date').append(dateAndTime)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 12fd651 (debugging, reverted to previous version)
     //display symbol
     $('.cryptoName').replace('*Selected Coin*', sym)
     $('.cryptoName').replace('*Coin Value*', coinValue)
@@ -86,14 +101,52 @@ var displayCoinLayerData = function (coinLayerData) {
 
 var displayCryptoCompareData = function (cryptoCompareData) {
 
+<<<<<<< HEAD
     //Clear any old news article cards
     while (newsColumns.firstChild) {
         newsColumns.removeChild(newsColumns.firstChild);
     }
+=======
+var toggleDropdown = function (event){
+    event.stopPropagation();
+    dropdown.classList.toggle('is-active');
+
+    if (event.target.className == "dropdown-item") {
+        var selectedCoin = event.target.textContent;
+
+        if (selectedCoin.includes("Bitcoin")) {
+            // var sym = 'BTC';
+            getCryptoCompareDataBySymbol("BTC");
+            getCoinLayerDataBySymbol("BTC");
+        }if (selectedCoin.includes("Etherium")) {
+            // var sym = 'ETH';
+            getCryptoCompareDataBySymbol("ETH");
+            getCoinLayerDataBySymbol("ETH");
+        }if (selectedCoin.includes("LiteCoin")) {
+            // var sym = 'LTC';
+            getCryptoCompareDataBySymbol("LTC");
+            getCoinLayerDataBySymbol("LTC");
+        }if (selectedCoin.includes("Ripple")) {
+            // var sym = 'XRP';
+            getCryptoCompareDataBySymbol("XRP");
+            getCoinLayerDataBySymbol("XRP");
+        }if (selectedCoin.includes("Cardano")) {
+            // var sym = 'ADA';
+            getCryptoCompareDataBySymbol("ADA");
+            getCoinLayerDataBySymbol("ADA");
+        }if (selectedCoin.includes("Crypto.com Coin")) {
+            // var sym = 'CRO';
+            getCryptoCompareDataBySymbol("CRO");
+            getCoinLayerDataBySymbol("CRO");
+        }
+    }
+}
+>>>>>>> parent of 12fd651 (debugging, reverted to previous version)
 
     // Create card elements for the first 3 news articles
     for (var i = 0; i < 3; i++) {
 
+<<<<<<< HEAD
         // -------- Create the card elements --------
         var column = document.createElement("div");
         column.classList.add("column");
@@ -190,3 +243,5 @@ var toggleDropdown = function (event){
 }
 
 dropdown.addEventListener('click', toggleDropdown);
+=======
+>>>>>>> parent of 12fd651 (debugging, reverted to previous version)
