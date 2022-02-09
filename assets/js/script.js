@@ -49,20 +49,16 @@ var getCoinLayerDataBySymbol = function (symbol) {
         // check if we recieved data back and if we did, display it to user
         .then(coinLayerData => {
             if (coinLayerData != "" && coinLayerData != null) {
-                console.log(coinLayerData)
-                displayCoinLayerData(coinLayerData);
-                var coinValue = coinLayerData.rates
-                console.log(coinValue)
+            return displayCoinLayerData(coinLayerData);
             }
         })
+
 
 
         // if we encounter errors above, this catch block will run
         .catch(function (error) {
             console.log(error);
         });
-
-
 }
 
 var displayCryptoCompareData = function (cryptoCompareData) {
@@ -73,49 +69,17 @@ var displayCryptoCompareData = function (cryptoCompareData) {
 var displayCoinLayerData = function (coinLayerData) {
     console.log(coinLayerData)
 
-    //display date and time 
     var dateAndTime = moment().format('MMMM Do YYYY, h:mm:ss a');   
+    console.log(dateAndTime)
+
+    //display date and time 
     $('.time-date').append(dateAndTime)
-
-    //display symbol
-    $('.cryptoName').replace('*Selected Coin*', sym)
-    $('.cryptoName').replace('*Coin Value*', coinValue)
 }
 
 
-var toggleDropdown = function (event){
-    event.stopPropagation();
-    dropdown.classList.toggle('is-active');
-
-    if (event.target.className == "dropdown-item") {
-        var selectedCoin = event.target.textContent;
-
-        if (selectedCoin.includes("Bitcoin")) {
-            // var sym = 'BTC';
-            getCryptoCompareDataBySymbol("BTC");
-            getCoinLayerDataBySymbol("BTC");
-        }if (selectedCoin.includes("Etherium")) {
-            // var sym = 'ETH';
-            getCryptoCompareDataBySymbol("ETH");
-            getCoinLayerDataBySymbol("ETH");
-        }if (selectedCoin.includes("LiteCoin")) {
-            // var sym = 'LTC';
-            getCryptoCompareDataBySymbol("LTC");
-            getCoinLayerDataBySymbol("LTC");
-        }if (selectedCoin.includes("Ripple")) {
-            // var sym = 'XRP';
-            getCryptoCompareDataBySymbol("XRP");
-            getCoinLayerDataBySymbol("XRP");
-        }if (selectedCoin.includes("Cardano")) {
-            // var sym = 'ADA';
-            getCryptoCompareDataBySymbol("ADA");
-            getCoinLayerDataBySymbol("ADA");
-        }if (selectedCoin.includes("Crypto.com Coin")) {
-            // var sym = 'CRO';
-            getCryptoCompareDataBySymbol("CRO");
-            getCoinLayerDataBySymbol("CRO");
-        }
-    }
-}
 
 
+
+
+getCoinLayerDataBySymbol("BTC");
+getCryptoCompareDataBySymbol("BTC")
