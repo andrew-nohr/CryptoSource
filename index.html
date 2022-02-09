@@ -1,145 +1,157 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> 
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <title>Crypto Source</title>
-    </head>
 
-    <body>
-      <header>
-        <h1 class="title is-uppercase is-size-1 has-text-centered has-text-primary">Crypto Source</h1>
-        <h2 class="subtitle is-size-3 has-text-centered has-text-info">Your source for current crypto currency rates and patterns.</h2>
-      </header>
-      <div class="hero is-fullheight">
-        <div class="hero-body">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Crypto Source</title>
+</head>
 
-        <section class="container">
+<body>
+  <header>
+    <h1 class="title is-uppercase is-size-1 has-text-centered has-text-primary">Crypto Source</h1>
+    <h2 class="subtitle is-size-3 has-text-centered has-text-info">Your source for current crypto currency rates and
+      patterns.</h2>
+  </header>
+  <div class="hero is-fullheight">
+    <div class="hero-body">
+
+      <section class="container">
         <!-- DROPDOWN MENU STARTS-->
         <div class="dropdown">
-        <div class="dropdown-trigger">
+          <div class="dropdown-trigger">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
-            
-                <span>Choose a coin or token</span>
-                <span class="icon is-small">
-            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                
-                </span>
-                          </button>
-                        </div>
-                        <div class="dropdown-menu" id="dropdown-menu2" role="menu">
-                          <div class="dropdown-content">
-                            <hr class="dropdown-divider">
-                            <a href="#btc" class="dropdown-item">
-                              Bitcoin (BTC)
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#eth" class="dropdown-item">
-                              Etherium (ETH)
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#ltc" class="dropdown-item">
-                              LiteCoin (LTC)
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#xrp" class="dropdown-item">
-                              Ripple (XRP)
-                            </a>
-                            <hr class="dropdown-divider">                            
-                            <a href="#ada" class="dropdown-item">
-                                Cardano (ADA)
-                            </a>
-                            <hr class="dropdown-divider">                            
-                            <a href="#cro" class="dropdown-item">
-                                Crypto.com Coin (CRO)
-                            </a>                            
-                    </div>
-                </div>
+
+              <span>Choose a coin or token</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+            <div class="dropdown-content">
+              <hr class="dropdown-divider">
+              <a href="#btc" class="dropdown-item">
+                Bitcoin (BTC)
+              </a>
+              <hr class="dropdown-divider">
+              <a href="#eth" class="dropdown-item">
+                Etherium (ETH)
+              </a>
+              <hr class="dropdown-divider">
+              <a href="#ltc" class="dropdown-item">
+                LiteCoin (LTC)
+              </a>
+              <hr class="dropdown-divider">
+              <a href="#xrp" class="dropdown-item">
+                Ripple (XRP)
+              </a>
+              <hr class="dropdown-divider">
+              <a href="#ada" class="dropdown-item">
+                Cardano (ADA)
+              </a>
+              <hr class="dropdown-divider">
+              <a href="#cro" class="dropdown-item">
+                Crypto.com Coin (CRO)
+              </a>
             </div>
-        
-                    <!-- DROPDOWN MENU ENDS-->
-        </section>
-        <section class = "backgroundContainer">
-            <p class = "time-date">As of DATE & TIME</p>
-            <p class = "cryptoName"> *Selected Coin* has a trading value of about *Coin Value*</p>
-            <p class = "cryptoValue"> </p>
-            <p class = "has-text-warning">*Please note estimated values can expire in a matter of seconds.</p>
-        </section>
+          </div>
+        </div>
 
-        <section class="backgroundContainer2 is-gapless">
-            <h2 class = "subtitle is-size-3 has-text-centered has-text-info">NEWS ARTICLES</h2>
+        <!-- DROPDOWN MENU ENDS-->
+      </section>
+      <section class="backgroundContainer">
+        <p class="time-date">As of DATE & TIME</p>
+        <p class="cryptoName"> *Selected Coin* has a trading value of about *Coin Value*</p>
+        <p class="cryptoValue"> </p>
+        <p class="has-text-warning">*Please note estimated values can expire in a matter of seconds.</p>
+      </section>
 
-            <!--News Article Containers Begin Here-->
-            <section class="container">
-                <div class="columns features">
+      <section class="backgroundContainer2 is-gapless">
+        <h2 class="subtitle is-size-3 has-text-centered has-text-info">NEWS ARTICLES</h2>
+
+        <!--News Article Containers Begin Here-->
+        <section class="container">
+          <div class="columns features" id="news-columns">
             <div class="column is-4">
-                <div class="card is-shady">
-                  <div class="card-image">
-                    <figure class="image is-4by3">
-                      <img src="https://www.quoteinspector.com/media/bitcoin/crypto-ticker-candle-background-md.jpg" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="content">
-                      <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat fugiat quam esse dolorem? Illo incidunt, provident quisquam possimus officia iusto repudiandae ipsum velit amet, tempora reiciendis, eos quae ullam maiores?</p>
-                      <a href="http://www.google.com" target="_blank" class="button is-link">Read</a>
-                    </div>
+              <div class="card is-shady">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="https://www.quoteinspector.com/media/bitcoin/crypto-ticker-candle-background-md.jpg"
+                      alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="content">
+                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat fugiat quam esse dolorem? Illo
+                      incidunt, provident quisquam possimus officia iusto repudiandae ipsum velit amet, tempora
+                      reiciendis, eos quae ullam maiores?</p>
+                    <a href="http://www.google.com" target="_blank" class="button is-link">Read</a>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="column is-4">
-                <div class="card is-shady">
-                  <div class="card-image">
-                    <figure class="image is-4by3">
-                      <img src="https://www.quoteinspector.com/media/bitcoin/crypto-ticker-candle-background-md.jpg" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="content">
-                      <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt qui, at porro culpa voluptatem dolor illum temporibus tempora quaerat vero hic sapiente labore adipisci ducimus repellendus et totam deleniti dolores.</p>
-                      <a href="http://www.google.com" target="_blank" class="button is-link">Read</a>
-                    </div>
+            <div class="column is-4">
+              <div class="card is-shady">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="https://www.quoteinspector.com/media/bitcoin/crypto-ticker-candle-background-md.jpg"
+                      alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="content">
+                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt qui, at porro culpa voluptatem
+                      dolor illum temporibus tempora quaerat vero hic sapiente labore adipisci ducimus repellendus et
+                      totam deleniti dolores.</p>
+                    <a href="http://www.google.com" target="_blank" class="button is-link">Read</a>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="column is-4">
-                <div class="card is-shady">
-                  <div class="card-image">
-                    <figure class="image is-4by3">
-                      <img src="https://www.quoteinspector.com/media/bitcoin/crypto-ticker-candle-background-md.jpg" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="content">
-                      <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, maiores? Dicta repudiandae reiciendis reprehenderit amet repellendus nesciunt nulla officia id repellat ea a ducimus, incidunt temporibus ullam consequuntur esse eos.</p>
-                      <a href="http://www.google.com" target="_blank" class="button is-link">Read</a>
-                    </div>
+            <div class="column is-4">
+              <div class="card is-shady">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="https://www.quoteinspector.com/media/bitcoin/crypto-ticker-candle-background-md.jpg"
+                      alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="content">
+                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, maiores? Dicta repudiandae
+                      reiciendis reprehenderit amet repellendus nesciunt nulla officia id repellat ea a ducimus,
+                      incidunt temporibus ullam consequuntur esse eos.</p>
+                    <a href="http://www.google.com" target="_blank" class="button is-link">Read</a>
                   </div>
                 </div>
               </div>
-              </div>
-              </section>
-            <!--News Article Containers End Here-->
-
+            </div>
+          </div>
         </section>
-      </div>
+        <!--News Article Containers End Here-->
+
+      </section>
     </div>
-        
-        <script>
-        var dropdown = document.querySelector('.dropdown');
-            dropdown.addEventListener('click', function(event) {
-            event.stopPropagation();
-            dropdown.classList.toggle('is-active');
-            });
-        </script>
-        
-        <script src="./assets/js/script.js"></script>
-    </body>
+  </div>
+
+  <script>
+    var dropdown = document.querySelector('.dropdown');
+    dropdown.addEventListener('click', function (event) {
+      event.stopPropagation();
+      dropdown.classList.toggle('is-active');
+    });
+  </script>
+
+  <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
