@@ -1,5 +1,4 @@
 body {
-<<<<<<< HEAD
   background-image: url(../images/cypto2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -43,31 +42,3 @@ section.backgroundContainer2 {
   flex: content;
   flex-direction: row;
 }
-=======
-    background-image: url(../images/cypto2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-header {
-    background-color: black;
-    opacity: 70%;
-}
-
-
-.backgroundContainer {
-    -ms-flex-align: center;
-    flex: content;
-    margin: 20px;
-    padding: 5px;
-    background-color: black;
-    opacity: 70%;
-    border: 2px rgb(98, 0, 255) solid;
-}
-
-.hero-body {
-    align-items: self-start !important;
-}
->>>>>>> SallyJava
