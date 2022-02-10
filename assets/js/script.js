@@ -8,7 +8,6 @@ var getCryptoCompareDataBySymbol = function (symbol) {
 
     var cryptoCompareURL = "https://min-api.cryptocompare.com/data/v2/news/?lang=EN&categories=" + symbol + "&api_key=" + cryptoCompareApiKey
 
-
     fetch(cryptoCompareURL)
 
         // Check if response is OK and if it is, load response as json
