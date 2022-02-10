@@ -66,29 +66,57 @@ var displayCryptoCompareData = function (cryptoCompareData) {
 
 var displayCoinLayerData = function (coinLayerData) {
     console.log(coinLayerData)
+    //Clear out old display
+
+    //display date and time 
         var dateAndTime = moment().format('MMMM Do YYYY, h:mm:ss a');   
-        console.log(dateAndTime)
-        //display date and time 
-        $('.time-date').append(dateAndTime)
-
-        //Extract Coin value
-        var coinValue = '$  ' + coinLayerData.rates.BTC
-
-        //display coin name and value 
-        $('.cryptoName').replaceWith('BTC has a trading value of about    ' + coinValue)
+        $('.time-date').append('As of       ' + dateAndTime)
+    //display coin value 
+        var coinName = Object.keys(coinLayerData.rates)
+        console.log(coinName)
+        var coinValue = Object.values(coinLayerData.rates)
+        console.log(coinValue)
+        $('.cryptoName').replaceWith('Trading value of  ' + coinName +  '   is  $   ' + coinValue)
     }
     
 
-// responding to clicking on drop down items
+// responding to clicking on each drop down items
 function BTC() {
  //fetch 
  getCryptoCompareDataBySymbol('BTC');
  getCoinLayerDataBySymbol('BTC');
- 
 }
 
+function ETH() {
+    //fetch 
+    getCryptoCompareDataBySymbol('ETH');
+    getCoinLayerDataBySymbol('ETH');
+}
+function LTC() {
+    //fetch 
+    getCryptoCompareDataBySymbol('LTC');
+    getCoinLayerDataBySymbol('LTC');
+}
 
+function XRP() {
+    //fetch 
+    getCryptoCompareDataBySymbol('XRP');
+    getCoinLayerDataBySymbol('XRP');
+}
 
+function ADA() {
+    //fetch 
+    getCryptoCompareDataBySymbol('ADA');
+    getCoinLayerDataBySymbol('ADA');
+}
+
+function CRO() {
+    //fetch 
+    getCryptoCompareDataBySymbol('CRO');
+    getCoinLayerDataBySymbol('CRO');
+}
+
+   
 
 
 
