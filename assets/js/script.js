@@ -1,5 +1,5 @@
 var cryptoCompareApiKey = "c3d24075ea2af90c9c9419267e59744738dc365a925003c0232e1ebef14a98b1";
-var coinLayerApiKey = "badc6c35cf23ca80b1c1af4c8eda2e1d";
+var coinLayerApiKey = "adf0c97a6bc7712feea1fc05da4edb58";
 
 var getCryptoCompareDataBySymbol = function (symbol) {
 
