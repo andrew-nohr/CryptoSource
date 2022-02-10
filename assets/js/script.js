@@ -7,14 +7,13 @@ var dropdown = document.querySelector('.dropdown');
 var getCryptoCompareDataBySymbol = function (symbol) {
 
     var cryptoCompareURL = "https://min-api.cryptocompare.com/data/v2/news/?lang=EN&categories=" + symbol + "&api_key=" + cryptoCompareApiKey
-    var myHeaders = new Headers();
-    //myHeaders.append('Content-Type','text/plain; charset=UTF-8');
+
+
     fetch(cryptoCompareURL)
 
         // Check if response is OK and if it is, load response as json
         .then(response => {
             if (response.ok) {
-                //response.setContentType = "text/html;charset=ISO-8859-1";
                 return response.json()
             } else {
                 return Promise.reject("API did not return an OK response.");
