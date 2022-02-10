@@ -53,27 +53,35 @@ var getCoinLayerDataBySymbol = function (symbol) {
             }
         })
 
-
-
         // if we encounter errors above, this catch block will run
         .catch(function (error) {
             console.log(error);
         });
 }
 
+//Displaying 
 var displayCryptoCompareData = function (cryptoCompareData) {
     console.log(cryptoCompareData)
 }
 
-
 var displayCoinLayerData = function (coinLayerData) {
     console.log(coinLayerData)
+        var dateAndTime = moment().format('MMMM Do YYYY, h:mm:ss a');   
+        console.log(dateAndTime)
+        //display date and time 
+        $('.time-date').append(dateAndTime)
+}
+    
+    
 
-    var dateAndTime = moment().format('MMMM Do YYYY, h:mm:ss a');   
-    console.log(dateAndTime)
 
-    //display date and time 
-    $('.time-date').append(dateAndTime)
+
+// responding to clicking on drop down items
+function BTC() {
+ //fetch 
+ getCryptoCompareDataBySymbol('BTC');
+ getCoinLayerDataBySymbol('BTC');
+ 
 }
 
 
@@ -81,5 +89,4 @@ var displayCoinLayerData = function (coinLayerData) {
 
 
 
-getCoinLayerDataBySymbol("BTC");
-getCryptoCompareDataBySymbol("BTC")
+
