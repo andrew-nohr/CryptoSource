@@ -49,7 +49,7 @@ var getCoinLayerDataBySymbol = function (symbol) {
         // check if we recieved data back and if we did, display it to user
         .then(coinLayerData => {
             if (coinLayerData != "" && coinLayerData != null) {
-            return displayCoinLayerData(coinLayerData);
+            displayCoinLayerData(coinLayerData);
             }
         })
 
@@ -70,11 +70,14 @@ var displayCoinLayerData = function (coinLayerData) {
         console.log(dateAndTime)
         //display date and time 
         $('.time-date').append(dateAndTime)
-}
-    
-    
 
+        //Extract Coin value
+        var coinValue = '$  ' + coinLayerData.rates.BTC
 
+        //display coin name and value 
+        $('.cryptoName').replaceWith('BTC has a trading value of about    ' + coinValue)
+    }
+    
 
 // responding to clicking on drop down items
 function BTC() {
