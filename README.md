@@ -1,4 +1,6 @@
 # Crypto Source
 
 #USER STORY
-AS boot camp participant your hopes and dreams making it in the tech industry is constantly plagued by imposter syndrome. After a discouraging day from realizing that you are now late in submitting two assignments, YOU WANT to take the basic coding skill that you have learned so far and roll the metaphorical dice on crypto currency. You plan to do this by creating a website THAT will aide you in staying informed on basic crypto currency rates and patterns.
+Given that cryptocurrencies are extremely volatile, prior to making an impulse buy I want to read up to the minute news that may affect the price of various coins or tokens.  In order to do this, I need a quick and reliable way to pull headlines regarding specific coins or tokens.
+
+![ScreenShot](https://drive.google.com/file/d/1pGf51s4hcgUsicMCTGX6V1l4ruqWUfrQ/view?usp=sharing)
