@@ -1,6 +1,6 @@
 var cryptoCompareApiKey =
   "c3d24075ea2af90c9c9419267e59744738dc365a925003c0232e1ebef14a98b1";
-var coinLayerApiKey = "badc6c35cf23ca80b1c1af4c8eda2e1d";
+var coinLayerApiKey = "adf0c97a6bc7712feea1fc05da4edb58";
 
 var newsColumns = document.getElementById("news-columns");
 var dropdown = document.querySelector(".dropdown");
@@ -58,7 +58,7 @@ var getCoinLayerDataBySymbol = function (symbol) {
     // check if we recieved data back and if we did, display it to user
     .then((coinLayerData) => {
       if (coinLayerData != "" && coinLayerData != null) {
-        return displayCoinLayerData(coinLayerData);
+        displayCoinLayerData(coinLayerData);
       }
     })
 
@@ -135,6 +135,19 @@ var displayCryptoCompareData = function (cryptoCompareData) {
 
 var displayCoinLayerData = function (coinLayerData) {
   console.log(coinLayerData);
+  //Clear out old display
+
+  //display date and time
+  var dateAndTime = moment().format("MMMM Do YYYY, h:mm:ss a");
+  $(".time-date").append("As of       " + dateAndTime);
+  //display coin value
+  var coinName = Object.keys(coinLayerData.rates);
+  console.log(coinName);
+  var coinValue = Object.values(coinLayerData.rates);
+  console.log(coinValue);
+  $(".cryptoName").replaceWith(
+    "Trading value of  " + coinName + "   is  $   " + coinValue
+  );
 };
 
 var toggleDropdown = function (event) {
@@ -170,5 +183,41 @@ var cleanString = function (str) {
     return String.fromCharCode(num);
   });
 };
+
+// responding to clicking on each drop down items
+function BTC() {
+  //fetch
+  getCryptoCompareDataBySymbol("BTC");
+  getCoinLayerDataBySymbol("BTC");
+}
+
+function ETH() {
+  //fetch
+  getCryptoCompareDataBySymbol("ETH");
+  getCoinLayerDataBySymbol("ETH");
+}
+function LTC() {
+  //fetch
+  getCryptoCompareDataBySymbol("LTC");
+  getCoinLayerDataBySymbol("LTC");
+}
+
+function XRP() {
+  //fetch
+  getCryptoCompareDataBySymbol("XRP");
+  getCoinLayerDataBySymbol("XRP");
+}
+
+function ADA() {
+  //fetch
+  getCryptoCompareDataBySymbol("ADA");
+  getCoinLayerDataBySymbol("ADA");
+}
+
+function CRO() {
+  //fetch
+  getCryptoCompareDataBySymbol("CRO");
+  getCoinLayerDataBySymbol("CRO");
+}
 
 dropdown.addEventListener("click", toggleDropdown);
