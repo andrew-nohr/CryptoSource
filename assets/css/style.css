@@ -38,6 +38,7 @@ header {
 
 .has-text-warning,
 .cryptoName,
+.cryptoValue,
 .time-date {
   text-align: center;
 }
