@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>Crypto Source</title>
 </head>
 
@@ -32,38 +33,39 @@
           <div class="dropdown-menu" id="dropdown-menu2" role="menu">
             <div class="dropdown-content">
               <hr class="dropdown-divider">
-              <a href="#btc" class="dropdown-item">
+              <a href="#btc" class="dropdown-item" id="BTC" onclick="BTC()">
                 Bitcoin (BTC)
               </a>
               <hr class="dropdown-divider">
-              <a href="#eth" class="dropdown-item">
+              <a href="#eth" class="dropdown-item" id="ETH" onclick="ETH()">
                 Etherium (ETH)
               </a>
               <hr class="dropdown-divider">
-              <a href="#ltc" class="dropdown-item">
+              <a href="#ltc" class="dropdown-item" id="LTC" onclick="LTC()">
                 LiteCoin (LTC)
               </a>
               <hr class="dropdown-divider">
-              <a href="#xrp" class="dropdown-item">
+              <a href="#xrp" class="dropdown-item" id ="XRP" onclick="XRP()">
                 Ripple (XRP)
               </a>
-              <hr class="dropdown-divider">
-              <a href="#ada" class="dropdown-item">
-                Cardano (ADA)
+              <hr class="dropdown-divider">                            
+              <a href="#ada" class="dropdown-item" id ="ADA" onclick="ADA()">
+                  Cardano (ADA)
               </a>
-              <hr class="dropdown-divider">
-              <a href="#cro" class="dropdown-item">
-                Crypto.com Coin (CRO)
-              </a>
-            </div>
+              <hr class="dropdown-divider">                            
+              <a href="#cro" class="dropdown-item" id="CRO" onclick="CRO()">
+                  Crypto.com Coin (CRO)
+              </a>                            
+      </div>
+
           </div>
         </div>
 
         <!-- DROPDOWN MENU ENDS-->
       </section>
       <section class="backgroundContainer">
-        <p class="time-date">As of DATE & TIME</p>
-        <p class="cryptoName"> *Selected Coin* has a trading value of about *Coin Value*</p>
+        <p class = "time-date"></p>
+        <p class = "cryptoName"> Coin value of selected coin will be displayed.</p>
         <p class="cryptoValue"> </p>
         <p class="has-text-warning">*Please note estimated values can expire in a matter of seconds.</p>
       </section>
@@ -135,6 +137,7 @@
     </div>
   </div>
 
+  <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 
