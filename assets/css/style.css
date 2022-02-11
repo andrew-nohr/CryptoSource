@@ -11,6 +11,11 @@ header {
   opacity: 70%;
 }
 
+.article-container {
+  height: 500px;
+  overflow-x: scroll;
+}
+
 .backgroundContainer,
 .backgroundContainer2 {
   margin: 20px;
@@ -18,6 +23,10 @@ header {
   background-color: black;
   opacity: 90%;
   border: 2px rgb(98, 0, 255) solid;
+}
+
+.cardHeight {
+  max-height: 50vh;
 }
 
 .hero-body {
