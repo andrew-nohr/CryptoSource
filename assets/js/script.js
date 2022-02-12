@@ -39,7 +39,7 @@ var getCryptoCompareDataBySymbol = function (symbol) {
 
 var getCoinLayerDataBySymbol = function (symbol) {
   var coinLayerURL =
-    "http://api.coinlayer.com/api/live?access_key=" +
+    "https//api.coinlayer.com/api/live?access_key=" +
     coinLayerApiKey +
     "&Symbols=" +
     symbol;
