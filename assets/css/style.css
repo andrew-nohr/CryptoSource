@@ -4,7 +4,6 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  text-align: center;
 }
 
 header {
@@ -12,13 +11,22 @@ header {
   opacity: 70%;
 }
 
+.article-container {
+  height: 500px;
+  overflow-x: scroll;
+}
+
 .backgroundContainer,
 .backgroundContainer2 {
   margin: 20px;
   padding: 5px;
   background-color: black;
-  opacity: 70%;
+  opacity: 90%;
   border: 2px rgb(98, 0, 255) solid;
+}
+
+.cardHeight {
+  max-height: 50vh;
 }
 
 .hero-body {
@@ -30,6 +38,7 @@ header {
 
 .has-text-warning,
 .cryptoName,
+.cryptoValue,
 .time-date {
   text-align: center;
 }
