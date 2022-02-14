@@ -1,6 +1,5 @@
 var cryptoCompareApiKey =
   "c3d24075ea2af90c9c9419267e59744738dc365a925003c0232e1ebef14a98b1";
-var coinLayerApiKey = "adf0c97a6bc7712feea1fc05da4edb58";
 
 var newsColumns = document.getElementById("news-columns");
 var dropdown = document.querySelector(".dropdown");
@@ -37,15 +36,8 @@ var getCryptoCompareDataBySymbol = function (symbol) {
     });
 };
 
-var getCoinLayerDataBySymbol = function (symbol) {
-  var coinLayerURL =
-    "http://api.coinlayer.com/api/live?access_key=" +
-    coinLayerApiKey +
-    "&Symbols=" +
-    symbol;
-
-  console.log("Fetching: " + coinLayerURL);
-  fetch(coinLayerURL)
+var getCoinGeckoDataById = function (coinId) {
+  fetch("https://api.coingecko.com/api/v3/simple/price?ids=" + coinId + "&vs_currencies=usd")
     // Check if response is OK and if it is, load response as json
     .then((response) => {
       if (response.ok) {
@@ -56,9 +48,10 @@ var getCoinLayerDataBySymbol = function (symbol) {
     })
 
     // check if we recieved data back and if we did, display it to user
-    .then((coinLayerData) => {
-      if (coinLayerData != "" && coinLayerData != null) {
-        displayCoinLayerData(coinLayerData);
+    .then((coinGeckoData) => {
+      if (coinGeckoData != "" && coinGeckoData != null) {
+        displayCoinGeckoData(coinGeckoData);
+        console.log(coinGeckoData);
       }
     })
 
@@ -133,19 +126,23 @@ var displayCryptoCompareData = function (cryptoCompareData) {
   }
 };
 
-var displayCoinLayerData = function (coinLayerData) {
-  console.log(coinLayerData);
+var displayCrptoName = function(coinName){
+$(".cryptoName").text("Trading value of  " + coinName + "   is")
+}
+
+var displayCoinGeckoData = function (coinGeckoData) {
   //display date and time
   var dateAndTime = moment().format("MMMM Do YYYY, h:mm:ss a");
   $(".time-date").text("As of       " + dateAndTime);
-  //display coin value
-  var coinName = Object.keys(coinLayerData.rates);
-  console.log(coinName);
-  var coinValue = Object.values(coinLayerData.rates);
-  console.log(coinValue);
-  $(".cryptoName").text(
-    "Trading value of  " + coinName + "   is  $   " + coinValue
-  );
+  //extract coin rate
+    // var coinName = Object.keys(coinGeckoData);
+    var coinRate = Object.values(coinGeckoData)[0]
+    console.log(coinRate)
+    var coinRateRefined = Object.values(coinRate)
+    console.log(coinRateRefined)
+
+//display coin rate 
+$(".cryptoValue").text('$' + coinRateRefined);
 };
 
 var toggleDropdown = function (event) {
@@ -188,7 +185,8 @@ function BTC() {
   $(".cryptoName").empty()
   //fetch
   getCryptoCompareDataBySymbol("BTC");
-  getCoinLayerDataBySymbol("BTC");
+  getCoinGeckoDataById("Bitcoin");
+  displayCrptoName("Bitcoin");
 }
 
 function ETH() {
@@ -196,14 +194,16 @@ function ETH() {
   $(".cryptoName").empty()
   //fetch
   getCryptoCompareDataBySymbol("ETH");
-  getCoinLayerDataBySymbol("ETH");
+  getCoinGeckoDataById("Ethereum");
+  displayCrptoName("Ethereum (ETH)");
 }
 function LTC() {
   $(".time-date").empty()
   $(".cryptoName").empty()
   //fetch
   getCryptoCompareDataBySymbol("LTC");
-  getCoinLayerDataBySymbol("LTC");
+  getCoinGeckoDataById("Litecoin");
+  displayCrptoName("Litecoin (LTC)");
 }
 
 function XRP() {
@@ -211,7 +211,8 @@ function XRP() {
   $(".cryptoName").empty()
   //fetch
   getCryptoCompareDataBySymbol("XRP");
-  getCoinLayerDataBySymbol("XRP");
+  getCoinGeckoDataById("Ripple");
+  displayCrptoName("Ripple (XRP)");
 }
 
 function ADA() {
@@ -219,7 +220,8 @@ function ADA() {
   $(".cryptoName").empty()
   //fetch
   getCryptoCompareDataBySymbol("ADA");
-  getCoinLayerDataBySymbol("ADA");
+  getCoinGeckoDataById("Cardano");
+  displayCrptoName("Cardano (ADA)");
 }
 
 function CRO() {
@@ -227,7 +229,8 @@ function CRO() {
   $(".cryptoName").empty()
   //fetch
   getCryptoCompareDataBySymbol("CRO");
-  getCoinLayerDataBySymbol("CRO");
+  getCoinGeckoDataById("crypto-com-chain");
+  displayCrptoName("Crypto.com Coin (CRO)");
 }
 
 dropdown.addEventListener("click", toggleDropdown);
