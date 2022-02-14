@@ -51,7 +51,6 @@ var getCoinGeckoDataById = function (coinId) {
     .then((coinGeckoData) => {
       if (coinGeckoData != "" && coinGeckoData != null) {
         displayCoinGeckoData(coinGeckoData);
-        console.log(coinGeckoData);
       }
     })
 
@@ -137,9 +136,7 @@ var displayCoinGeckoData = function (coinGeckoData) {
   //extract coin rate
     // var coinName = Object.keys(coinGeckoData);
     var coinRate = Object.values(coinGeckoData)[0]
-    console.log(coinRate)
     var coinRateRefined = Object.values(coinRate)
-    console.log(coinRateRefined)
 
 //display coin rate 
 $(".cryptoValue").text('$' + coinRateRefined);
